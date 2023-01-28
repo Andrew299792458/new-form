@@ -4,19 +4,24 @@ const ProfileContext = createContext();
 
 const AppProvider = ({ children }) => {
 
-    const [profile, setProfile] = useState({
+    const [changes, setChanges] = useState(
+        {
+            firstName: '',
+            lastName: '',
+            age: '',
+            gender: '',
+            position: '',
+            email: '',
+            phoneNumber: '',
+            dateOfBirth: '',
+            file: null,
+            flag: true
+        }
+    )
+    const [newProfile, setNewProfile] = useState([])
 
-        firstName: '-',
-        lastName: '-',
-        age: '',
-        gender: '',
-        position: 'no position',
-        email: '',
-        phoneNumber: '',
-        dateOfBirth: '',
-    })
 
-    return <ProfileContext.Provider value={{ profile, setProfile }}>
+    return <ProfileContext.Provider value={{ newProfile, setNewProfile, changes, setChanges }}>
         {children}
     </ProfileContext.Provider>
 

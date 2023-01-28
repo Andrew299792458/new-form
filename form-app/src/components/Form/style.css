@@ -1,4 +1,4 @@
-form{
+.form{
     max-width: 900px;
     width: 100%;
     background-color: rgb(126, 126, 126);
@@ -7,7 +7,7 @@ form{
     flex-wrap: wrap;
     gap: 20px;
 }
-fieldset{
+.fieldset{
     border: 0px;
     display: flex;
     flex-direction: column;
