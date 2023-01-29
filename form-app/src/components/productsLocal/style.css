@@ -1,0 +1,23 @@
+.products{
+    display: flex;
+    flex-direction: column;
+}
+.productsHead{
+    background-color: aquamarine;
+  
+}
+.profileImage{
+    width: 100px;
+}
+.newProfile{
+    background-color: bisque;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 600px;
+    gap: 50px;
+}
+.database{
+      display: flex;
+    flex-direction: row;
+}

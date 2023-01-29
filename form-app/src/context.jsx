@@ -19,6 +19,7 @@ const AppProvider = ({ children }) => {
         }
     )
     const [newProfile, setNewProfile] = useState([])
+    
 
 
     return <ProfileContext.Provider value={{ newProfile, setNewProfile, changes, setChanges }}>

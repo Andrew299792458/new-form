@@ -1,14 +1,29 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { useGlobalContext } from "../../context";
 import { useNavigate } from "react-router-dom";
+import { useGlobalContext } from "../../context";
 import "./style.css"
 
-export const Form = () => {
+export const LocalForm = () => {
 
     const nav = useNavigate()
 
-    const { newProfile, setNewProfile, changes, setChanges } = useGlobalContext()
+    const [changes, setChanges] = useState(
+        {
+            firstName: '',
+            lastName: '',
+            age: '',
+            gender: '',
+            position: '',
+            email: '',
+            phoneNumber: '',
+            dateOfBirth: '',
+            file: null,
+            flag: true
+        }
+    )
+    const { newProfile, setNewProfile } = useGlobalContext()
+
 
     const change = (e) => {
         setChanges({ ...changes, [e.target.name]: e.target.value });
@@ -19,30 +34,13 @@ export const Form = () => {
     // }
 
     const SaveChanges = () => {
-
-        setNewProfile([...newProfile, changes])
-        // Navigate()
-
-
-
-        Locate()
-    }
-
-    const Locate = () => {
-        if (newProfile.length > 0) {
-            localStorage.setItem("localProfile", JSON.stringify(newProfile))
-            console.log(newProfile)
-
-        } else {
-            setNewProfile([...newProfile, changes])
-
+        const arr = newProfile
+        arr.push(changes)
+        if (arr.length > 0) {
+            setNewProfile(arr)
+            localStorage.setItem("localProfile", JSON.stringify(arr))
+            nav("/Products")
         }
-        Navigate()
-    }
-
-    const Navigate = () => {
-
-        nav("/Products")
     }
 
     return <div className="Form">

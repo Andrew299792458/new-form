@@ -1,12 +1,13 @@
 import React from "react";
-import { Form } from "../../components/Form";
+// import { LocalForm } from "../../components/LocalForm";
+import { FormAPI } from "../../components/FormAPI"
 import "./style.css"
 
 export const Home = () => {
     return <>
         <div>
-
-            <Form />
+            <FormAPI />
+            {/* <LocalForm /> */}
         </div>
 
 
