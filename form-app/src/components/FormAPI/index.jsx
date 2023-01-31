@@ -35,7 +35,7 @@ export const FormAPI = () => {
 
         if (changes.firstName !== "") {
             setNewProfile([...newProfile, changes])
-            console.log("valid true")
+            // console.log("valid true")
             valid = true
         } else { console.log("errorValid") }
         return valid
@@ -45,15 +45,15 @@ export const FormAPI = () => {
     //     setChanges({ ...changes, file: e.target.files[0] })
     // }
 
-    const SaveChanges = async (e) => {
-        e.preventDefault()
+    const SaveChanges = async () => {
 
         if (Valid()) {
             const result = await PostUsers(changes)
             console.log("result")
             if (result) {
                 setNewProfile([...newProfile, result.data])
-                console.log("set")
+                localStorage.setItem("id", result.data._id)
+                localStorage.setItem("data", JSON.stringify(result.data))
                 nav("/Products")
             }
         } else { console.log("errorSave") }

@@ -19,10 +19,10 @@ const AppProvider = ({ children }) => {
         }
     )
     const [newProfile, setNewProfile] = useState([])
-    
+    const [id, setId] = useState()
 
 
-    return <ProfileContext.Provider value={{ newProfile, setNewProfile, changes, setChanges }}>
+    return <ProfileContext.Provider value={{ newProfile, setNewProfile, changes, setChanges, id, setId }}>
         {children}
     </ProfileContext.Provider>
 

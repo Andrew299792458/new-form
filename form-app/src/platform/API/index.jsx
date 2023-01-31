@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-const Api = 'https://crudcrud.com/api/655889b0093a4fcfa50e6399c8c15fbb/'
+const Api = 'https://crudcrud.com/api/f8ebf43ee3374ef99b4e9c0a5fff45f9/'
 
 export const PostUsers = (data) => {
     return axios.post(`${Api}users`, data)
